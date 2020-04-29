@@ -1,20 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
-class SearchBar extends Component {
-  handleUpdate = (event) => {
+class Search extends Component {
+  handleSearch = (event) => {
     this.props.searchFunction(event.target.value);
   }
 
   render() {
     return (
-      <input
-        type="text"
-        className="form-control form-search"
-        placeholder="Search here!"
-        onChange={this.handleUpdate} // if click outside of the box will search immediately
-      />
-    )
+      <input type="text" name="form-search" onChange={this.handleSearch} />
+    );
   }
 }
-
-export default SearchBar;
+export default Search;

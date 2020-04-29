@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Gif from './gif.jsx';
+import Gif from './gif';
 
-class GifList extends Component {
-  render() {
-    return (
-      <div className="gif-list">
-        {this.props.gifsB.map((eachGif) => {
-          return (
-            <Gif id={eachGif.id} key={eachGif.id} chooseThisGif={this.props.changeGif} />
-          );
-        })}
-;
-      </div>
-    );
-  }
-}
+const GifList = (props) => {
+  return (
+    <div className="gif-list">
+      {props.listArray.map(eachElement => <Gif id={eachElement.id} key={eachElement.id} selectGif={props.selectGif} />)}
+    </div>
+  );
+};
 
 export default GifList;
